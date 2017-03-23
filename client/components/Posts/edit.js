@@ -50,7 +50,11 @@ class EditPost extends Component {
         <input type="text" value={this.state.title} onChange={this.handleTitle}/>
         <button onClick={this._onBoldClick.bind(this)}>Bold</button>
         <button onClick={this._onSaveClick.bind(this)}>Save</button>
-        <Editor editorState={this.state.editorState} onChange={this.onChange} />
+        <Editor
+          editorState={this.state.editorState}
+          onChange={this.onChange}
+
+          />
       </div>
     );
   }

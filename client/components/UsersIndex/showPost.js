@@ -13,11 +13,13 @@ class ShowPost extends Component {
 
   render() {
     return (
-      <div>
+      <div className="show-post">
         <h3>{this.props.post.title}</h3>
         <Editor
           editorState={this.state.editorState}
           readOnly
+          className="show-post-editor"
+          
         />
       </div>);
   }
