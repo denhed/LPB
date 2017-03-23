@@ -7,8 +7,9 @@ import css from './styles/style.styl'
 
 // import components
 import App from './components/App'
-//import SingleSurvey from './components/SingleSurvey'
-import UsersIndex from './components/UsersIndex'
+import UsersIndex from './components/UsersIndex';
+import ShowPost from './components/Posts/show';
+import EditPost from './components/Posts/edit';
 
 // import react router
 import { Router, Route, IndexRoute } from 'react-router'
@@ -21,10 +22,11 @@ const router = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={UsersIndex} />
+        <Route path="edit" component={EditPost} />
+        <Route path="show/:id" component={ShowPost} />
       </Route>
     </Router>
   </Provider>
-)
+);
 
-render(router, document.getElementById('root'))
-//<Route path="survey/:id" component={SingleSurvey} />
+render(router, document.getElementById('root'));

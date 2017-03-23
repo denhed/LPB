@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-//import Survey from '../Survey';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import ShowPost from './showPost';
+
 class UsersIndex extends Component {
   componentWillMount(){
-    this.props.getUsersAPI();
+    this.props.getPostsAPI();
   }
 
   render() {
-    if(this.props.users.length === 0) { return <div>Loading...</div> };
+    if(this.props.posts.length === 0) { return <div>Loading...</div> };
     return (
       <div>
         <div className="">
-          {this.props.users.map(user => {
+          {this.props.posts.map(post => {
             return (
-              <h3 key={user.id}>{user.firstName}</h3>
+              <ShowPost key={post.id} post={post} />
             )
           })}
         </div>
@@ -26,8 +27,7 @@ class UsersIndex extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    users: state.users
+    posts: state.posts
   };
 }
 export default connect(mapStateToProps, null)(UsersIndex);
-//export default SurveyGrid;

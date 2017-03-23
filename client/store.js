@@ -7,10 +7,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // import the root reducer
 import rootReducer from './reducers/index'
 
-import posts from './data/posts'
+//import posts from './data/posts'
 
 // create an object for the default data
-const defaultState = { posts }
+//const defaultState = { posts }
 
 //
 const store = createStore(
