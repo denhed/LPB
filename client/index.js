@@ -8,7 +8,7 @@ import css from './styles/style.styl'
 // import components
 import App from './components/App'
 import UsersIndex from './components/UsersIndex';
-import ShowPost from './components/Posts/show';
+import ShowItem from './components/Posts/show';
 import EditPost from './components/Posts/edit';
 
 // import react router
@@ -23,7 +23,7 @@ const router = (
       <Route path="/" component={App}>
         <IndexRoute component={UsersIndex} />
         <Route path="edit" component={EditPost} />
-        <Route path="show/:id" component={ShowPost} />
+        <Route path="show/:id" component={ShowItem} />
       </Route>
     </Router>
   </Provider>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import {Editor, EditorState, RichUtils, convertFromRaw} from 'draft-js';
 
 class ShowPost extends Component {
@@ -12,14 +13,15 @@ class ShowPost extends Component {
   }
 
   render() {
+    const { id, title } = this.props.post;
     return (
       <div className="show-post">
-        <h3>{this.props.post.title}</h3>
+        <h3><Link to={`/show/${id}`}>{title}</Link></h3>
         <Editor
           editorState={this.state.editorState}
           readOnly
           className="show-post-editor"
-          
+
         />
       </div>);
   }
